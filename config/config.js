@@ -24,9 +24,6 @@ module.exports = function() {
             user : mongoUser,
             password : mongoPass,
             database : mongoDb
-        },
-        server : {
-            defaultHost : 'http://localhost:8001'
         }
     };
 
