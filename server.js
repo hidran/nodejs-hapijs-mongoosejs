@@ -1,6 +1,26 @@
 var Hapi = require('hapi');
 var config = require('./config/config');
 var serverConfig = config.application;
+var path = require('path');
+var fs = require('fs');
+
+var DOWNLOAD_DIR = path.normalize(config.DOWNLOAD_DIR);
+
+fs.exists(DOWNLOAD_DIR ,function(exists){
+
+        if(!exists) {
+
+            var exec = require('child_process').exec;
+
+            var mkdir = 'mkdir -p ' + DOWNLOAD_DIR;
+
+            exec(mkdir, function (err) {
+                if (err) throw err;
+
+
+            });
+        }
+    });
 
 var mongoose = require('./Db/mongoosedb')(config.database);
 

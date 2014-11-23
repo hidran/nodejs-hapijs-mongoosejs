@@ -8,9 +8,7 @@ module.exports = function(mongoose, CustomerModel, EventModel) {
     }
 
     BatchController.prototype = function () {
-
-
-
+        var DOWNLOAD_DIR = require('../config/config').DOWLOAD_DIR;
         return {
 
             insertEvents: function insert(request, reply) {
@@ -47,13 +45,13 @@ module.exports = function(mongoose, CustomerModel, EventModel) {
                     var fs = require('fs');
 
                     var name = data.file.hapi.filename +'.json';
-                    var path = __dirname + "/../downloads/" + name;
+                    var path = DOWNLOAD_DIR + name;
 
                     var file = fs.open(path,'w', function(err, fd){
                         if(err){
                             reply(err);
                         } else {
-                            fs.write(fd, JSON.stringify(allObjs),function(err){
+                            fs.write(fd, JSON.stringify(allObjs),function(err, data){
                                 if(err){
                                     reply(err);
                                 }else{
@@ -110,7 +108,7 @@ module.exports = function(mongoose, CustomerModel, EventModel) {
                     var fs = require('fs');
 
                     var name = data.file.hapi.filename +'.json';
-                    var path = __dirname + "/../downloads/" + name;
+                    var path = DOWNLOAD_DIR + name;
 
                     var file = fs.open(path,'w', function(err, fd){
                         if(err){

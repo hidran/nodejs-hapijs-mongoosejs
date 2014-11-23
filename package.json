@@ -1,13 +1,13 @@
 {
   "name": "localzproject",
   "version": "1.0.0",
-  "description": "localz test project",
+  "description": "localz test project using hapijs, mongoosejs, nodejs and Joi",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "hapi"
+    "hapijs","mongoosejs","mongodb","validate","Joy"
   ],
   "engines": {
     "node": "0.10.x"
@@ -15,9 +15,6 @@
   "author": "Hidran Arias <hidran@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "csvtojson": "^0.3.16",
-    "good": "^4.0.0",
-    "good-console": "^2.0.1",
     "hapi": "^7.5.2",
     "joi": "^4.9.0",
     "mongoose": "^3.8.19"

@@ -24,7 +24,8 @@ module.exports = function() {
             user : mongoUser,
             password : mongoPass,
             database : mongoDb
-        }
+        },
+        DOWNLOAD_DIR :'/home/hidran/NODEPROJECTS/hapiproject/downloads/'
     };
 
 

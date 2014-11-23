@@ -1,8 +1,10 @@
 /**
  * Created by hidran on 11/23/14.
  */
+
 module.exports = function(mongoose,CustomerModel, EventModel) {
     var batchController = require('../controllers/batch')(mongoose, CustomerModel, EventModel);
+
 
 
     return [

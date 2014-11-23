@@ -11,7 +11,7 @@ var exec = require('child_process').exec;
 // App variables
 var file_url1 = 'https://s3-eu-west-1.amazonaws.com/spotz-temp-hosting/nodejs-test-customers.csv';
 var file_url2 = "https://s3-eu-west-1.amazonaws.com/spotz-temp-hosting/nodejs-test-events.csv";
-var DOWNLOAD_DIR = '../downloads2/';
+var DOWNLOAD_DIR = '../downloads/';
 
 // We will be downloading the files to a directory, so make sure it's there
 // This step is not required if you have manually created the directory
