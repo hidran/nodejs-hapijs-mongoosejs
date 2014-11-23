@@ -10,6 +10,7 @@ The api test routes are:
 http://localhost:8000/api/events
 
 An event has this structure:
+```
         {
             eventDate:Date,
             customerId:String,
@@ -22,19 +23,20 @@ An event has this structure:
 
 
 http://localhost:8000/api/customers
-
+```
 A customer:
+```
 {
  Id:String,
  Name : String
 }
-
+```
 You can massive upload records in csv format using:
-
+```
 http://localhost:8000/batch/customers
 
 http://localhost:8000/batch/customers
-
+```
 Only POST  with multipart/form-data allowed .
 
 The first line of the file should have the column names
