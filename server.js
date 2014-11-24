@@ -40,8 +40,12 @@ try {
     console.log(e)
 }
 if(mongoose && server) {
-    server.start(function () {
-        console.log('Server running at: ' + server.info.uri);
-    });
+    // If main module and not included as a module
+    if (!module.parent) {
+        server.start(function () {
+            console.log('Server running at: ' + server.info.uri);
+        });
+    }
+    module.exports = server;
 }
 

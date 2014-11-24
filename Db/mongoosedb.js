@@ -24,7 +24,7 @@ module.exports = function(config) {
     if(config.database){
         connString +=  '/' + config.database;
     }
-    console.log(connString)
+   // console.log(connString)
     var res = mongoose.connect('mongodb://' + connString, function(err){
         if(err){
             console.log(err);
