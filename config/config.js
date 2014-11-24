@@ -6,7 +6,7 @@ module.exports = function() {
 
     var apiPort = 8000;
 
-    var mongoHost = '0.0.0.0';
+    var mongoHost = 'localhost';
     var mongoPort = 27017;
     var mongoDb = 'localz';
     var mongoUser = '';
@@ -25,7 +25,7 @@ module.exports = function() {
             password : mongoPass,
             database : mongoDb
         },
-        DOWNLOAD_DIR :'/home/hidran/NODEPROJECTS/hapiproject/downloads/'
+        DOWNLOAD_DIR :'/home/arias/NODEPROJECTS/hapiproject/downloads/'
     };
 
 
