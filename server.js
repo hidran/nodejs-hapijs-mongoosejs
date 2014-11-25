@@ -25,9 +25,11 @@ fs.exists(DOWNLOAD_DIR ,function(exists){
 });
 try {
     var mongoose = require('./Db/mongoosedb')(config.database);
+    var hapiConfig = {
+        cors:true
+    };
 
-
-    var server = Hapi.createServer(serverConfig.host, serverConfig.port);
+    var server = Hapi.createServer(serverConfig.host, serverConfig.port, hapiConfig);
 
     var EventModel = require('./models/Event')(mongoose);
 

@@ -25,18 +25,25 @@ module.exports = function(mongoose, EventModel){
                 })
             },
             findByLocationName: function findByID(request, reply) {
-                console.log(request.params);
-                var reg =new RegExp('^'+request.params.location_name);
+                //console.log(request.params);
+                if(request.params.location_name) {
+                    var reg = new RegExp('^' + request.params.location_name);
 
-                EventModel.find({
-                   'location':{ '$regex':reg, $options:'i'}
-                }, function(err, event){
-                    if(err) reply(err);
-                    reply(event)
-                })
+                    EventModel.find({
+                        'location': {'$regex': reg, $options: 'i'}
+                    }, null, { sort: { location: 1 }}, function (err, event) {
+                        if (err) reply(err);
+                        reply(event)
+                    });
+                } else {
+                    EventModel.find(null, null, { sort: { location: 1 }},function(err, events){
+                        if(err) reply(err);
+                        reply(events)
+                    });
+                }
             },
             find: function find(request, reply) {
-                EventModel.find(function(err, events){
+                EventModel.find(null,null,{ sort: { location: 1 }},function(err, events){
                     if(err) reply(err);
                     reply(events)
                 });

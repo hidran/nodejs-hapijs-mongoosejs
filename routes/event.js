@@ -27,10 +27,10 @@ module.exports = function(mongoose, eventModel) {
         },
         {
             method: 'GET',
-            path: '/api/events/locations/{location_name}',
+            path: '/api/events/locations/{location_name?}',
             config : {
-                handler: eventController.findByLocationName,
-                validate: eventValidate.findByLocationName
+                handler: eventController.findByLocationName//,
+              //  validate: eventValidate.findByLocationName
             }
         },
         {

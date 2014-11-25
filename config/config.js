@@ -2,7 +2,7 @@
  * Created by hidran on 11/22/14.
  */
 module.exports = function() {
-    var apiHost = '0.0.0.0';
+    var apiHost = 'localhost';
 
     var apiPort = 8000;
 
@@ -25,7 +25,7 @@ module.exports = function() {
             password : mongoPass,
             database : mongoDb
         },
-        DOWNLOAD_DIR :'/home/arias/NODEPROJECTS/hapiproject/downloads/'
+        DOWNLOAD_DIR :'/home/hidran/NODEPROJECTS/hapiproject/downloads/'
     };
 
 
