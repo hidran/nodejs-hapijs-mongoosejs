@@ -1,28 +1,56 @@
-<form class="form-horizontal" role="form">
+<!--
+ eventDate:{type:Date, required:true},
+            customerId:{type:String, required:true, min:3},
+            beaconEnterDate:{type:Date, required:true},
+            beaconExitDate:{type:Date},
+            location:{type:String, required:true, min:3},
+            beaconId:{type:String, required:true, min:3},
+            customerName :{type:String,ref:'Customer'}
+
+-->
+<form class="form-horizontal" role="form" ng-submit="saveEvent()" class="col-md-6">
     <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <label for="location" class="col-sm-2 control-label">Location</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            <input type="text"  required ng-model="location" class="form-control" id="location" placeholder="location">
         </div>
     </div>
     <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <label for="eventDate" class="col-sm-2 control-label">event date</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            <input type="date" required ng-model="eventDate" class="form-control" id="eventDate" placeholder="event Date">
         </div>
     </div>
+    <div class="form-group">
+        <label for="location" class="col-sm-2 control-label">Beacon enter date</label>
+        <div class="col-sm-10">
+            <input type="datetime-local"  required ng-model="beaconEnterDate" class="form-control" id="beaconEnterDate" placeholder="beacon Enter Date">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="beaconExitDate" class="col-sm-2 control-label">Beacon exit date</label>
+        <div class="col-sm-10">
+            <input type="datetime-local" required  ng-model="beaconExitDate" class="form-control" id="beaconExitDate" placeholder="beacon Exit Date">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="beaconId" class="col-sm-2 control-label">Beacon id</label>
+        <div class="col-sm-10">
+            <input type="text" required  ng-model="beaconId" class="form-control" id="beaconId" placeholder="beaconId">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="customerId" class="col-sm-2 control-label">Customer id</label>
+        <div class="col-sm-10">
+            <input type="text" required  ng-model="customerId" class="form-control" id="customerId" placeholder="location">
+        </div>
+    </div>
+
+
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> Remember me
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Sign in</button>
+            <input type="hidden"   ng-model="_id" class="form-control" id="_id">
+            <button type="submit" class="btn btn-default">Save</button>
         </div>
     </div>
 </form>

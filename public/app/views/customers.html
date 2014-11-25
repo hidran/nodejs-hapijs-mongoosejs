@@ -19,6 +19,7 @@
 
         <td>{{customer.Id}}</td>
         <td>{{customer.Name}}</td>
+        <td><a href="" ng-click="updateCustomer('{{customer._id}}')">Update</a> </td>
         <td id="{{customer._id}}"><a href="" ng-click="deleteCustomer('{{customer._id}}')">Delete</a> </td>
     </tr>
     </tbody>

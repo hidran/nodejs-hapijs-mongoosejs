@@ -2,8 +2,8 @@
  * Created by hidran on 11/22/14.
  */
 "use strict";
-module.exports = function(mongoose, CustomerModel, EventModel) {
-
+module.exports = function( CustomerModel, EventModel) {
+    var mongoose = require('mongoose');
     function BatchController() {
     }
 
@@ -138,7 +138,7 @@ module.exports = function(mongoose, CustomerModel, EventModel) {
 
 
         }
-    }(mongoose);
+    }();
     return new BatchController();
 
 };

@@ -4,7 +4,9 @@
   "description": "localz test project using hapijs, mongoosejs, nodejs and Joi",
   "main": "server.js",
   "scripts": {
-    "test": "mocha test/mongoosevent.js test/mongoosecustomer.js "
+    "test": " npm run test-lab && npm run test-mocha",
+      "test-lab": " ./node_modules/lab/bin/lab test/routesmodeltest.js ",
+      "test-mocha": " ./node_modules/mocha/bin/mocha test/mongoosemodeltest.js"
   },
   "keywords": [
     "hapijs",
@@ -25,7 +27,7 @@
   },
   "devDependencies": {
     "code": "^1.2.1",
-    "lab": "^5.0.3",
+    "lab": "^5.1.0",
     "mocha": "^2.0.1",
     "should": "^4.3.0"
   }

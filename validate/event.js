@@ -12,7 +12,7 @@ EventValidate.prototype = (function(){
     var payloadConf = {
 
         eventDate:Joi.date().required(),
-        customerId:Joi.number().required(),
+        customerId:Joi.string().required(),
         beaconEnterDate:Joi.date().required(),
         beaconExitDate:Joi.date().required(),
         location:Joi.string().required(),

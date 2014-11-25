@@ -5,12 +5,19 @@ angular.module('LocalzEvents').factory("eventService", ["$resource", function ($
     var baseUri='http://localhost:8000/api/events';
     ///api/events/locations/
     var Events = $resource(baseUri+'/'+':event_id', { event_id: '@event_id' }, { 'update': { method: 'PUT'} });
+
     var EventLocations = $resource(baseUri+'/locations/'+':location_name', { location_name: '@location_name'  });
+
     var getAllEvents= function () {
         return Events.query();
     };
     var addNewEvent= function (event) {
-        return Events.save(event);
+        if(!event._id){
+            return Events.save(event);
+        } else {
+
+        return updateEvent(event);
+        }
     };
     var updateEvent = function (event) {
 /*
@@ -21,7 +28,7 @@ angular.module('LocalzEvents').factory("eventService", ["$resource", function ($
  location:String,
  beaconId:String
  */
-
+        var eventId = event._id;
         delete(event._id);
         return $resource(baseUri+'/'+eventId, null, { 'update': { method: 'PUT'} }).update(
             event

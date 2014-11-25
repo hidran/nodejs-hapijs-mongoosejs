@@ -5,8 +5,8 @@
 
 
 
-module.exports = function(mongoose, EventModel){
-
+module.exports = function( EventModel){
+    var mongoose = require('mongoose');
     function EventController(){}
 
     EventController.prototype = function(){
@@ -21,6 +21,7 @@ module.exports = function(mongoose, EventModel){
                     '_id':request.params.event_id
                 }, function(err, event){
                     if(err) reply(err);
+
                     reply(event)
                 })
             },

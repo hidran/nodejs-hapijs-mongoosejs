@@ -30,13 +30,17 @@ window.LocalzEvents = angular
         templateUrl: 'views/customers.html',
         controller: 'CustomerCtrl'
       })
+        .when('/customers/:customer_id', {
+            templateUrl: 'views/newcustomer.html',
+            controller: 'CustomerCtrl'
+        })
         .when('/newCustomer', {
             templateUrl: 'views/newcustomer.html',
             controller: 'CustomerCtrl'
         })
-        .when('/newEvent', {
+        .when('/newEvent/:event_id', {
             templateUrl: 'views/newevent.html',
-            controller: 'EventCtrl'
+            controller: 'MainCtrl'
         })
       .otherwise({
         redirectTo: '/'

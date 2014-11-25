@@ -5,8 +5,9 @@
 
 
 
-module.exports = function(mongoose, eventModel) {
-    var eventController = require('../controllers/event')(mongoose, eventModel);
+module.exports = function(eventModel) {
+
+    var eventController = require('../controllers/event')( eventModel);
     var eventValidate = require('../validate/event');
     return [
         {

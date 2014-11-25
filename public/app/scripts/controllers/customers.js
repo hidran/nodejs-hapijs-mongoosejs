@@ -8,7 +8,8 @@
  * Controller of the publicApp
  */
 angular.module('LocalzEvents')
-  .controller('CustomerCtrl', ["$rootScope", "$location", "$scope", "customerService", function ( $rootScope, $location, $scope,customerService) {
+  .controller('CustomerCtrl', ["$routeParams","$rootScope", "$location", "$scope", "customerService",
+        function ($routeParams, $rootScope, $location, $scope,customerService) {
 
         var init = function () {
             customerService.getAll().$promise.then(function (customers) {
@@ -17,8 +18,18 @@ angular.module('LocalzEvents')
             });
             // $scope.sortOrder = "location";
         };
+        if($routeParams.customer_id){
+            customerService.getByKey($routeParams.customer_id).$promise.then(function(res){
+                for(var i in res){
+                    if(res.hasOwnProperty(i)){
+                        $scope[i]= res[i];
+                     }
+                }
 
-        init();
+            });
+        } else{
+            init();
+        }
         $scope.deleteCustomer = function(id){
             customerService.remove(id).$promise.then(function(){
 
@@ -39,5 +50,11 @@ angular.module('LocalzEvents')
 
             });
         }
+        $scope.updateCustomer = function(Id){
 
+
+                $location.path('/customers/'+Id);
+
+
+        }
   }]);

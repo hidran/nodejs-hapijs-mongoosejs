@@ -2,13 +2,13 @@
  * Created by hidran on 11/22/14.
  */
 "use strict";
-module.exports = function(mongoose, CustomerModel) {
-
+module.exports = function( CustomerModel) {
+    var mongoose = require('mongoose');
     function CustomerController() {
     }
 
-    CustomerController.prototype = function (mongoose, CustomerModel) {
-
+    CustomerController.prototype = function (CustomerModel) {
+        var mongoose = require('mongoose');
         return {
             findByID: function findByID(request, reply) {
 
@@ -80,7 +80,7 @@ module.exports = function(mongoose, CustomerModel) {
                 });
             }
         }
-    }(mongoose, CustomerModel);
+    }( CustomerModel);
     return  new CustomerController();
 
 };

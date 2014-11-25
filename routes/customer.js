@@ -3,8 +3,9 @@
  */
 "use strict";
 
-module.exports = function(mongoose, CustomerModel) {
-    var customerController = require('../controllers/customer')(mongoose, CustomerModel);
+module.exports = function(CustomerModel) {
+
+    var customerController = require('../controllers/customer')( CustomerModel);
     var customerValidate = require('../validate/customer');
 
     return [

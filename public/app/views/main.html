@@ -42,20 +42,22 @@
                     <th>
                         Customer
                     </th>
-                    <th>&nbsp;s</th>
+                    <th>&nbsp;</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-repeat="event in events">
 
                     <td>{{event.location}}</td>
-                    <td>{{event.eventDate |  date : 'dd/mm/yy'}}</td>
+                    <td>{{event.eventDate |  date : 'dd/mm/yyyy' }}</td>
                     <td>{{event.beaconId}}</td>
-                    <td>{{event.beaconExitDate |  date :  'dd/mm/yy'}}</td>
-                    <td>{{event.beaconEnterDate |  date : 'dd/mm/yy'}}</td>
+                    <td>{{event.beaconExitDate |  date :  'dd/mm/yyyy' }}</td>
+                    <td>{{event.beaconEnterDate |  date : 'dd/mm/yyyy' }}</td>
 
                     <td>{{event.customerId}}</td>
+                    <td><a href="" ng-click="modifyEvent('{{event._id}}')">Modify</a> </td>
                     <td id="{{event._id}}"><a href="" ng-click="deleteEvent('{{event._id}}')">Delete</a> </td>
+
                 </tr>
                 </tbody>
             </table>
