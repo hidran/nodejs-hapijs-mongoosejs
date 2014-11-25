@@ -3,9 +3,11 @@ var config = require('./config/config');
 var serverConfig = config.application;
 var path = require('path');
 var fs = require('fs');
+
 process.on('uncaughtException', function(err) {
     console.log('Caught exception: ' + err);
 });
+
 var DOWNLOAD_DIR = path.normalize(config.DOWNLOAD_DIR);
 
 fs.exists(DOWNLOAD_DIR ,function(exists){

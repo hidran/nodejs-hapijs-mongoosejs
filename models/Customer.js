@@ -8,8 +8,8 @@ module.exports= function(mongoose) {
         var Schema = mongoose.Schema;
 
         var customerSchema = new Schema({
-            Name:String,
-            Id:String
+            Name:{type:String, required: true, trim: true, min:3},
+            Id:{type:Number, required: true, trim: true, min:3}
         });
 
         var Customer  = mongoose.model('Customer', customerSchema);

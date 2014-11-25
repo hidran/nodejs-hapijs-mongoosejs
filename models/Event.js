@@ -8,12 +8,12 @@ module.exports= function(mongoose) {
         var Schema = mongoose.Schema;
 
         var eventSchema = new Schema({
-            eventDate:Date,
-            customerId:String,
-            beaconEnterDate:Date,
-            beaconExitDate:Date,
-            location:String,
-            beaconId:String
+            eventDate:{type:Date, required:true},
+            customerId:{type:String, required:true, min:3},
+            beaconEnterDate:{type:Date, required:true},
+            beaconExitDate:{type:Date},
+            location:{type:String, required:true, min:3},
+            beaconId:{type:String, required:true, min:3}
         });
 
         var Event  = mongoose.model('Event', eventSchema);
