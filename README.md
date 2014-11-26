@@ -1,11 +1,10 @@
 This is a test project for creating a REST API using NODEJS, HAPIJS, MONGOOSEJ and JOY.
 
 Modify `conf/config.js` in order to set mongodb connection and HAPIJS server's conenction
-`npm install'  to install project dependencies .
+`npm install`  #to install project dependencies .
 ```
-npm test  to testmongoosee and API server's routes 
-node server.js 
- to launch server js
+npm test  #to testmongoosee and API server's routes 
+node server.js #to launch server js
 ```
 to verify 
 The default configuration will create a nodejs server on `localhost`, listening  on `port 8000` 
