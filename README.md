@@ -62,4 +62,6 @@ npm install -g bower grunt-li
 if it does not work
 scaffold an angular app with yo: `yo angular`, follow default choices
 and copy public/app to your angular folder.
+modify app.js in order to change constant() function to meet
+API endpoint
 ```

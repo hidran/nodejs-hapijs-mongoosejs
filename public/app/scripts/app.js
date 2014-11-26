@@ -46,7 +46,7 @@ window.LocalzEvents = angular
         redirectTo: '/'
       });
   }]).constant("API_CONFIG", {
-        "API_URL": "http://localhost:80000/api"
+        "API_URL": "http://localhost:8000/api"
 
     }).run(['$rootScope', '$location',function($rootScope, $location){
         $rootScope.isActive = function (viewLocation) {
