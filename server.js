@@ -8,9 +8,9 @@ var path = require('path');
 
 var fs = require('fs');
 
-//process.on('uncaughtException', function(err) {
- //   console.log('Caught exception: ' + err);
-//});
+process.on('uncaughtException', function(err) {
+   console.log('Caught exception: ' + err);
+});
 
 var DOWNLOAD_DIR = path.normalize(config.DOWNLOAD_DIR);
 
@@ -36,7 +36,7 @@ var mongoose = require('mongoose');
         cors:true
     };
 
-    var server = Hapi.createServer(serverConfig.host, serverConfig.port, hapiConfig);
+    var server = Hapi.createServer(serverConfig.host, serverConfig.port);
 
     var EventModel = require('./models/Event')();
 
