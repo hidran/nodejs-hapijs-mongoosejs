@@ -50,6 +50,7 @@ and the rest will have the values
 In order to test the API, you can use chrome's POSTMAN app  or
 go to folder public:
 ```
+npm install -g yo bower  #yeoman app angular generator
 npm install
 bower install
 grunt serve
@@ -57,4 +58,8 @@ grunt serve
 If bower or grunt-cli are not installed, install them globally:
 ```
 npm install -g bower grunt-li
+
+if it does not work
+scaffold an angular app with yo: `yo angular`, follow default choices
+and copy public/app to your angular folder.
 ```
