@@ -2,7 +2,7 @@
  * Created by hidran on 11/22/14.
  */
 module.exports = function() {
-    var apiHost = 'localhost';
+    var apiHost = '0.0.0.0';
 
     var apiPort = 8000;
 

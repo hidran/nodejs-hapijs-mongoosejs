@@ -1,8 +1,8 @@
 /**
  * Created by hidran on 11/24/14.
  */
-angular.module('LocalzEvents').factory("eventService", ["$resource", function ($resource) {
-    var baseUri='http://localhost:8000/api/events';
+angular.module('LocalzEvents').factory("eventService", ["$resource",'API_CONFIG', function ($resource, API_CONFIG) {
+    var baseUri= API_CONFIG.API_URL+'/events';
     ///api/events/locations/
     var Events = $resource(baseUri+'/'+':event_id', { event_id: '@event_id' }, { 'update': { method: 'PUT'} });
 

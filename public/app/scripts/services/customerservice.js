@@ -1,8 +1,9 @@
 /**
  * Created by hidran on 11/24/14.
  */
-angular.module('LocalzEvents').factory("customerService", ["$resource", function ($resource) {
-    var baseUri='http://localhost:8000/api/customers';
+angular.module('LocalzEvents').factory("customerService", ["$resource",'API_CONFIG', function ($resource, API_CONFIG) {
+    var baseUri= API_CONFIG.API_URL+'/customers';
+    alert(baseUri)
     var Customers = $resource(baseUri+'/'+':customer_id', { rowkey: '@customer_id' }, { 'update': { method: 'PUT'} });
     var getAllCustomers= function () {
         return Customers.query();

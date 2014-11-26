@@ -45,7 +45,10 @@ window.LocalzEvents = angular
       .otherwise({
         redirectTo: '/'
       });
-  }]).run(['$rootScope', '$location',function($rootScope, $location){
+  }]).constant("API_CONFIG", {
+        "API_URL": "http://localhost:80000/api"
+
+    }).run(['$rootScope', '$location',function($rootScope, $location){
         $rootScope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };
