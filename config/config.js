@@ -1,14 +1,15 @@
 /**
  * Created by hidran on 11/22/14.
  */
+
 module.exports = function() {
     var apiHost = '0.0.0.0';
 
-    var apiPort = 8000;
+    var apiPort = parseInt(process.env.PORT,10) || 8000;
 
     var mongoHost = 'localhost';
     var mongoPort = 27017;
-    var mongoDb = 'localz';
+    var mongoDb = 'test';
     var mongoUser = '';
     var mongoPass ='';
 
@@ -25,7 +26,7 @@ module.exports = function() {
             password : mongoPass,
             database : mongoDb
         },
-        DOWNLOAD_DIR :'/home/hidran/NODEPROJECTS/hapiproject/downloads/'
+        DOWNLOAD_DIR :'/tmp/downloads/'
     };
 
 
